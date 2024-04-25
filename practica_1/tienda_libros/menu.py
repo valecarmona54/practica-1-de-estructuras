@@ -106,3 +106,26 @@ while True:
     elif opcion == "15":
         usuario = input("Ingrese el identificador del usuario para verificar el descuento por alquiler múltiple: ")
         print(lista.aplicar_descuento_por_alquiler_multiple(usuario))
+
+    elif opcion == "16":
+        print(lista.calcular_ingreso_total())
+
+    elif opcion == "17":
+        numero_libro_deteriorado = int(input("Ingrese el número del libro deteriorado: "))
+        numero_libro_nuevo = int(input("Ingrese el número del libro nuevo: "))
+        genero = input("Ingrese el género del libro nuevo: ")
+        autor = input("Ingrese el autor del libro nuevo: ")
+        titulo = input("Ingrese el título del libro nuevo: ")
+        año_publicacion = int(input("Ingrese el año de publicación del libro nuevo: "))
+        tarifa_diaria_alquiler = float(input("Ingrese la tarifa diaria de alquiler del libro nuevo: "))
+
+        libro_nuevo = Libro(numero_libro_nuevo, genero, autor, titulo, año_publicacion, tarifa_diaria_alquiler)
+        print(lista.intercambiar_libros_deteriorados(numero_libro_deteriorado, libro_nuevo))
+
+
+    elif opcion == "0":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Por favor, seleccione una opción del menú.")
